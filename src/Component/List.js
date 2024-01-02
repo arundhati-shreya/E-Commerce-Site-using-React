@@ -37,6 +37,7 @@ const List = () => {
                 className="img-fluid rounded"
               />
               <p className="mt-2">Price: {item.price}</p>
+              <button type="button" class="btn btn-primary btn-sm">Add To Cart</button>
             </div>
           </div>
         ))}
