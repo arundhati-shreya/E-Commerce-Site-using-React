@@ -1,6 +1,9 @@
 import React, { useContext,useState } from "react";
+import {Link} from 'react-router-dom'
+
 import Cart from "../Cart/Cart";
 import { CartContext } from "../Store/ContextProvider";
+
 
 const Header = () => {
     const { cartItemCount,setCartItemCount } = useContext(CartContext);
@@ -26,7 +29,7 @@ const Header = () => {
                         <a className="nav-link text-white fw-bold" href="#">STORE</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link text-white fw-bold" href="#">ABOUT</a>
+                        <Link className="nav-link text-white fw-bold" to="/about">ABOUT</Link>
                     </li>
                 </ul>
                 <button type="button" className="btn btn-outline-info ms-auto me-3" onClick={showHandle}>
@@ -39,6 +42,7 @@ const Header = () => {
                 <h1 className="display-4 fw-bold">The Generics</h1>
             </div>
             {show && <Cart updateCartItemCount={updateCartItemCount} />}
+           
         </>
     )
 }
