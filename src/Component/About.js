@@ -1,13 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Header from './Header/Header';
-import Footer from './Footer/Footer';
+
 
 const About = () => {
   return (
     <>
-    <Header/>
+  
     <div className="container mt-5">
       <div className="row">
         <div className="col-md-6">
@@ -21,20 +20,24 @@ const About = () => {
         <div className="col-md-6">
           <h2 className="mb-4">About Us</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique euismod urna,
+            Lorem ipsum dolor sit ametLorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique euismod urna,
             id volutpat risus eleifend sit amet. Nulla facilisi. Sed eu risus nec nisi ultrices
             fermentum vel ut nulla.
           </p>
           <p>
             Fusce vel libero a urna cursus consequat. Proin auctor efficitur orci, vel vestibulum
             ligula feugiat nec. Nunc tincidunt justo vel accumsan feugiat. Integer euismod sapien
-            ut luctus convallis.
+            ut luctus convallis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique euismod urna,
+            id volutpat risus eleifend sit amet. Nulla facilisi. Sed eu risus nec nisi ultrices
+            fermentum vel ut nulla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tristique euismod urna,
+            id volutpat risus eleifend sit amet. Nulla facilisi. Sed eu risus nec nisi ultrices
+            fermentum vel ut nulla.
           </p>
          
         </div>
       </div>
     </div>
-    <Footer/>
+
     </>
   );
 };

@@ -23,10 +23,10 @@ const Header = () => {
            <nav className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
                 <ul className="nav justify-content-center mx-auto text-center me-3">
                     <li className="nav-item">
-                        <a className="nav-link active text-white fw-bold" aria-current="page" href="#">HOME</a>
+                        <Link className="nav-link active text-white fw-bold" aria-current="page" to="/home">HOME</Link>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link text-white fw-bold" href="#">STORE</a>
+                        <Link className="nav-link text-white fw-bold" to="/">STORE</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link text-white fw-bold" to="/about">ABOUT</Link>
