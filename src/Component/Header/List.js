@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../Store/ContextProvider";
 
 const List = () => {
   const DummyList = [
@@ -23,6 +24,11 @@ const List = () => {
       imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
     }
   ];
+  const cartContext = useContext(CartContext)
+
+  const addItemToCart = (item) => {
+    cartContext.addItemToCart(item);
+  };
 
   return (
     <div className="text-center">
@@ -37,7 +43,7 @@ const List = () => {
                 className="img-fluid rounded"
               />
               <p className="mt-2">Price: {item.price}</p>
-              <button type="button" class="btn btn-primary btn-sm">Add To Cart</button>
+              <button type="button" class="btn btn-primary btn-sm" onClick={() => addItemToCart(item)}>Add To Cart</button>
             </div>
           </div>
         ))}

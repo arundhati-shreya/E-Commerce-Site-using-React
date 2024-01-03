@@ -1,13 +1,19 @@
-import React, { useState } from "react";
-import Cart from "./Cart";
+import React, { useContext,useState } from "react";
+import Cart from "../Cart/Cart";
+import { CartContext } from "../Store/ContextProvider";
 
 const Header = () => {
+    const { cartItemCount,setCartItemCount } = useContext(CartContext);
     const[show,setShow]=useState(false);
+   
 
     const showHandle=()=>{
         setShow(!show)
     }
 
+    const updateCartItemCount = (count) => {
+       setCartItemCount(count);
+    };
 
     return (
         <>
@@ -23,13 +29,16 @@ const Header = () => {
                         <a className="nav-link text-white fw-bold" href="#">ABOUT</a>
                     </li>
                 </ul>
-                <button type="button" className="btn btn-outline-info ms-auto" onClick={showHandle}>Cart</button>
+                <button type="button" className="btn btn-outline-info ms-auto me-3" onClick={showHandle}>
+                    Cart {cartItemCount}
+                    {/* {cartItemCount > 0 && <span className="badge bg-danger ms-1">{cartItemCount}</span>} */}
+                    </button>
                 
             </nav>
             <div className="bg-secondary text-white text-center py-4">
                 <h1 className="display-4 fw-bold">The Generics</h1>
             </div>
-            {show && <Cart/>}
+            {show && <Cart updateCartItemCount={updateCartItemCount} />}
         </>
     )
 }
