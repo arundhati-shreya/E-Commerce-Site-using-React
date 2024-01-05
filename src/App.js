@@ -7,7 +7,7 @@ import Footer from './Component/Footer/Footer';
 import About from './Component/Pages/About';
 import Home from './Component/Pages/Home';
 import ContactUs from './Component/Pages/ContactUs';
-
+import ProductPage from './Component/ProductPage';
 
 
 
@@ -22,6 +22,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/product/:productId" element={<ProductPage />} />     
         </Routes>
       <Footer/>
       </Router>
