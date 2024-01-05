@@ -4,8 +4,9 @@ import Header from './Component/Header/Header';
 import List from './Component/Header/List';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Footer from './Component/Footer/Footer';
-import About from './Component/About';
-import Home from './Component/Home';
+import About from './Component/Pages/About';
+import Home from './Component/Pages/Home';
+import ContactUs from './Component/Pages/ContactUs';
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<List />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
       <Footer/>
       </Router>

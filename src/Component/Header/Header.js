@@ -31,6 +31,9 @@ const Header = () => {
                     <li className="nav-item">
                         <Link className="nav-link text-white fw-bold" to="/about">ABOUT</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link text-white fw-bold" to="/contact">CONTACT US</Link>
+                    </li>
                 </ul>
                 <button type="button" className="btn btn-outline-info ms-auto me-3" onClick={showHandle}>
                     Cart {cartItemCount}
