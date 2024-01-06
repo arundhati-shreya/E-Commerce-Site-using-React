@@ -24,6 +24,9 @@ const ProductPage = () => {
     reviews: [
       { id: 1, text: 'Great product!', rating: 5 },
       { id: 2, text: 'Not bad, could be better', rating: 3 },
+      { id: 3, text: 'Great product!', rating: 5 },
+      { id: 4, text: 'Not bad, could be better', rating: 3 },
+
     ],
   };
 
@@ -32,6 +35,7 @@ const ProductPage = () => {
   if (selectedProductIndex >= 0 && selectedProductIndex < productData.images.length) {
     const selectedProductImage = productData.images[selectedProductIndex];
     const selectedProductPrice = productData.price[selectedProductIndex];
+    // const selectedProductReview = productData.reviews[selectedProductIndex];
     return (
       <div>
         <h2>Product Page - {productData.id}</h2>

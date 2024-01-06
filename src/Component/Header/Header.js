@@ -3,12 +3,16 @@ import {Link} from 'react-router-dom'
 
 import Cart from "../Cart/Cart";
 import { CartContext } from "../Store/ContextProvider";
+import AuthContext from "../Store/auth-context";
 
 
 const Header = () => {
+
     const { cartItemCount,setCartItemCount } = useContext(CartContext);
     const[show,setShow]=useState(false);
-   
+    const authCtx = useContext(AuthContext);
+    
+    const isLoggedIn = authCtx.isLoggedIn;
 
     const showHandle=()=>{
         setShow(!show)
@@ -18,19 +22,26 @@ const Header = () => {
        setCartItemCount(count);
     };
 
+   
+
     return (
         <>
            <nav className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
-                <ul className="nav justify-content-center mx-auto text-center me-3">
+                <ul className="nav  me-3">
                     <li className="nav-item">
                         <Link className="nav-link active text-white fw-bold" aria-current="page" to="/home">HOME</Link>
                     </li>
+                    {isLoggedIn && 
                     <li className="nav-item">
                         <Link className="nav-link text-white fw-bold" to="/">STORE</Link>
-                    </li>
+                    </li>}
                     <li className="nav-item">
                         <Link className="nav-link text-white fw-bold" to="/about">ABOUT</Link>
                     </li>
+                    {!isLoggedIn &&
+                    <li className="nav-item">
+                        <Link className="nav-link text-white fw-bold" to="/login">LOGIN</Link>
+                    </li>}
                     <li className="nav-item">
                         <Link className="nav-link text-white fw-bold" to="/contact">CONTACT US</Link>
                     </li>
