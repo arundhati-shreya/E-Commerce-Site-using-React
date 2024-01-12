@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import { CartContext } from "../Store/ContextProvider";
 import { Link } from 'react-router-dom';
+// import axios from "axios";
+
 
 const List = () => {
+
   const DummyList = [
     {
       id: '1',
@@ -29,11 +32,10 @@ const List = () => {
       imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
     }
   ];
-  const cartContext = useContext(CartContext);
 
-  const addItemToCart = (item) => {
-    cartContext.addItemToCart(item);
-  };
+  const { addItemToCart } = useContext(CartContext);
+
+
 
   return (
     <div className="text-center">
@@ -48,7 +50,7 @@ const List = () => {
                 className="img-fluid rounded"
               />
               <p className="mt-2">Price: {item.price}</p>
-              <button type="button" className="btn btn-primary btn-sm" onClick={() => addItemToCart(item)}>Add To Cart</button>
+              <button type="button" className="btn btn-primary btn-sm"onClick={() => addItemToCart(item)}>Add To Cart</button>
               <Link to={`/product/${item.id}`} className="btn btn-secondary btn-sm ms-2">View Details</Link>
             </div>
           </div>

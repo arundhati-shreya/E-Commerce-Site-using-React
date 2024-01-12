@@ -25,7 +25,7 @@ const ProductPage = () => {
       { id: 1, text: 'Great product!', rating: 5 },
       { id: 2, text: 'Not bad, could be better', rating: 3 },
       { id: 3, text: 'Great product!', rating: 5 },
-      { id: 4, text: 'Not bad, could be better', rating: 3 },
+     
 
     ],
   };
@@ -51,6 +51,7 @@ const ProductPage = () => {
           <h3>Reviews</h3>
           {productData.reviews.map((review) => (
             <div key={review.id}>
+              <h6>User{review.id}</h6>
               <p>{review.text}</p>
               <p>Rating: {review.rating}</p>
             </div>

@@ -11,7 +11,7 @@ const Header = () => {
     const { cartItemCount, setCartItemCount } = useContext(CartContext);
     const [show, setShow] = useState(false);
     const authCtx = useContext(AuthContext);
-   
+
 
     const isLoggedIn = authCtx.isLoggedIn;
 
@@ -23,17 +23,20 @@ const Header = () => {
         setCartItemCount(count);
     };
 
+    const handleLogout=()=>{
+        authCtx.logout()
+    }
 
     return (
         <>
             <nav className="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
                 <ul className="nav  me-3">
                     <li className="nav-item">
-                        <Link className="nav-link active text-white fw-bold" aria-current="page" to="/home">HOME</Link>
+                        <Link className="nav-link active text-white fw-bold" aria-current="page" to="/">HOME</Link>
                     </li>
 
-                     <li className="nav-item">
-                        <Link className="nav-link text-white fw-bold" to={isLoggedIn ? "/" : "/login"}> STORE</Link>
+                    <li className="nav-item">
+                        <Link className="nav-link text-white fw-bold" to={isLoggedIn ? "/store" : "/login"}> STORE</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link text-white fw-bold" to="/about">ABOUT</Link>
@@ -41,6 +44,10 @@ const Header = () => {
                     {!isLoggedIn &&
                         <li className="nav-item">
                             <Link className="nav-link text-white fw-bold" to="/login">LOGIN</Link>
+                        </li>}
+                    {isLoggedIn &&
+                        <li className="nav-item">
+                            <Link className="nav-link text-white fw-bold" to="/login" onClick={handleLogout}>LOGOUT</Link>
                         </li>}
                     <li className="nav-item">
                         <Link className="nav-link text-white fw-bold" to="/contact">CONTACT US</Link>
